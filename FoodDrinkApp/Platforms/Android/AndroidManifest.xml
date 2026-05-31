@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+	<application android:allowBackup="true"
+				 android:icon="@mipmap/appicon"
+				 android:roundIcon="@mipmap/appicon_round"
+				 android:supportsRtl="true">
+	</application>
+
+	<!-- 网络权限 -->
+	<uses-permission android:name="android.permission.INTERNET" />
+
+	<!-- 相机权限 -->
+	<uses-permission android:name="android.permission.CAMERA" />
+
+	<!-- 存储权限 -->
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+	<!-- 定位权限（精确和粗略） -->
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+	<!-- 振动权限 -->
+	<uses-permission android:name="android.permission.VIBRATE" />
+
+	<!-- 后台定位权限（可选，用于后台获取位置） -->
+	<uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+	<!-- 硬件特性声明（可选，帮助Google Play过滤） -->
+	<uses-feature android:name="android.hardware.camera" android:required="false" />
+	<uses-feature android:name="android.hardware.location.gps" android:required="false" />
+</manifest>

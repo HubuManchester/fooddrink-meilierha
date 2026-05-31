@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:FoodDrinkApp.ViewModels"
+             xmlns:models="clr-namespace:FoodDrinkApp.Models"
+             x:Class="FoodDrinkApp.Pages.FoodDetailPage"
+             Title="{Binding Food.Name}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <!-- 食物图标 - 使用 Emoji -->
+            <Frame CornerRadius="20" 
+                   BackgroundColor="#F5F5F5"
+                   HeightRequest="120"
+                   HasShadow="False">
+                <Label Text="🍲" 
+                       FontSize="60"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+            </Frame>
+
+            <!-- 食物名称 -->
+            <Label Text="{Binding Food.Name}" 
+                   FontSize="28" 
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#333333"/>
+
+            <!-- 食物类型标签 -->
+            <Frame CornerRadius="15"
+                   BackgroundColor="#4CAF50"
+                   Padding="12,5"
+                   HorizontalOptions="Center"
+                   HasShadow="False">
+                <Label Text="{Binding Food.Type}" 
+                       FontSize="16" 
+                       TextColor="White"
+                       Background="Transparent"/>
+            </Frame>
+
+            <!-- 分隔线 -->
+            <BoxView HeightRequest="1" BackgroundColor="#E0E0E0" Margin="0,10"/>
+
+            <!-- 步骤标题 -->
+            <Label Text="📋 Cooking Steps" 
+                   FontSize="20" 
+                   FontAttributes="Bold"
+                   TextColor="#333333"/>
+
+            <!-- 步骤内容 -->
+            <Label Text="{Binding Food.Steps}" 
+                   FontSize="15" 
+                   TextColor="#555555"
+                   LineBreakMode="WordWrap"/>
+
+            <!-- 朗读按钮（Text-to-Speech硬件功能） -->
+            <Button Text="🔊 Read Aloud"
+                    BackgroundColor="#9C27B0"
+                    TextColor="White"
+                    CornerRadius="15"
+                    HeightRequest="50"
+                    FontSize="16"
+                    FontAttributes="Bold"
+                    Command="{Binding SpeakStepsCommand}"
+                    Margin="0,20,0,0"/>
+
+            <!-- 提示信息 -->
+            <Label Text="Tap 'Read Aloud' to hear the cooking steps (Text-to-Speech)" 
+                   FontSize="11" 
+                   TextColor="Gray"
+                   HorizontalOptions="Center"
+                   Margin="0,5"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

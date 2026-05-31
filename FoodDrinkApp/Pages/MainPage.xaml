@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:FoodDrinkApp.ViewModels"
+             xmlns:models="clr-namespace:FoodDrinkApp.Models"
+             x:Class="FoodDrinkApp.Pages.MainPage"
+             Title="Food &amp; Drink">
+
+    <Grid RowDefinitions="Auto,Auto,*">
+        <!-- 顶部搜索栏 -->
+        <Border Grid.Row="0"
+                BackgroundColor="{AppThemeBinding Light=#FFF1DA, Dark=#130F0C}"
+                Padding="16,12">
+            <SearchBar x:Name="SearchBar"
+                       Placeholder="Search foods, drinks, categories..."
+                       TextChanged="OnSearchTextChanged"
+                       SearchButtonPressed="OnSearchButtonPressed"
+                       BackgroundColor="{AppThemeBinding Light=#FFFFFA, Dark=#1A1712}"
+                       SemanticProperties.Hint="Search the food and drink list"/>
+        </Border>
+
+        <!-- 定位信息栏 -->
+        <Border Grid.Row="1"
+                BackgroundColor="{AppThemeBinding Light=#FFF0C9, Dark=#312316}"
+                Padding="16,10"
+                Margin="16,5,16,0"
+                StrokeThickness="0">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10" />
+            </Border.StrokeShape>
+            <Grid ColumnDefinitions="*,Auto">
+                <VerticalStackLayout>
+                    <Label Text="📍 Current Location" 
+                           FontSize="12" 
+                           TextColor="{AppThemeBinding Light=#A95517, Dark=#FFD18E}"
+                           FontAttributes="Bold"/>
+                    <Label x:Name="LocationLabel" 
+                           Text="Tap location button to get your location"
+                           FontSize="13"
+                           TextColor="{AppThemeBinding Light=#6E5A47, Dark=#D8C4AC}"
+                           MaxLines="1"
+                           LineBreakMode="TailTruncation"/>
+                </VerticalStackLayout>
+                <Button Grid.Column="1"
+                        Text="📍 Locate"
+                        BackgroundColor="#D9472B"
+                        TextColor="White"
+                        CornerRadius="15"
+                        Clicked="OnGetLocationClicked"
+                        SemanticProperties.Hint="Get current location"/>
+            </Grid>
+        </Border>
+
+        <!-- 食物列表 -->
+        <RefreshView Grid.Row="2"
+                     x:Name="FoodRefreshView" 
+                     Refreshing="OnRefreshing">
+            <CollectionView x:Name="FoodCollection"
+                            SelectionMode="None">
+                <CollectionView.EmptyView>
+                    <StackLayout Padding="20" Spacing="10">
+                        <Label Text="🍽️" FontSize="50" HorizontalOptions="Center"/>
+                        <Label Text="No food found!" 
+                               HorizontalOptions="Center" 
+                               FontSize="16"
+                               TextColor="Gray"/>
+                        <Label Text="Pull down to refresh or tap + button to add" 
+                               HorizontalOptions="Center" 
+                               FontSize="14"
+                               TextColor="LightGray"/>
+                    </StackLayout>
+                </CollectionView.EmptyView>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Margin="10" 
+                               Padding="10" 
+                               BorderColor="#E0E0E0" 
+                               CornerRadius="15"
+                               BackgroundColor="White">
+                            <Grid ColumnDefinitions="60,*">
+                                <Label Text="🍲" 
+                                       FontSize="35"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"/>
+
+                                <VerticalStackLayout Grid.Column="1" Spacing="5">
+                                    <Label Text="{Binding Name}" 
+                                           FontSize="18" 
+                                           FontAttributes="Bold"
+                                           TextColor="#333333"/>
+                                    <Label Text="{Binding Type}" 
+                                           FontSize="14"
+                                           TextColor="#666666"/>
+                                    <Label Text="{Binding Steps}" 
+                                           FontSize="12"
+                                           TextColor="#999999"
+                                           MaxLines="2"
+                                           LineBreakMode="TailTruncation"/>
+
+                                    <Button Text="View Details" 
+                                            BackgroundColor="#4CAF50" 
+                                            TextColor="White"
+                                            CornerRadius="10"
+                                            HeightRequest="35"
+                                            CommandParameter="{Binding .}"
+                                            Clicked="OnDetailsClicked"
+                                            HorizontalOptions="Start"/>
+                                </VerticalStackLayout>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+
+        <!-- 添加按钮 -->
+        <Button Grid.Row="2"
+                Text="+"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                Margin="20"
+                BackgroundColor="#FF9800"
+                TextColor="White"
+                CornerRadius="30"
+                WidthRequest="55"
+                HeightRequest="55"
+                FontSize="24"
+                FontAttributes="Bold"
+                Clicked="OnAddClicked"/>
+    </Grid>
+</ContentPage>

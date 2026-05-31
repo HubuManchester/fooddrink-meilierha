@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FoodDrinkApp.Pages.SettingsPage"
+             Title="Settings">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="16">
+
+            <Label Text="⚙️ Accessibility Settings" 
+                   FontSize="24" 
+                   FontAttributes="Bold"
+                   TextColor="{AppThemeBinding Light=#3A2518, Dark=#FFF2DF}"/>
+
+            <!-- 主题切换 - 使用 Frame 替代 Border -->
+            <Frame BorderColor="#E0E0E0" 
+                   CornerRadius="12"
+                   Padding="16"
+                   BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1A1712}"
+                   HasShadow="False">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="Theme Mode" 
+                           FontSize="16" 
+                           FontAttributes="Bold"
+                           TextColor="{AppThemeBinding Light=#D9472B, Dark=#FF9C7B}"/>
+                    <Picker x:Name="ThemePicker"
+                            Title="Select theme"
+                            SelectedIndexChanged="OnThemeChanged">
+                        <Picker.Items>
+                            <x:String>🌙 Use System Theme</x:String>
+                            <x:String>☀️ Light Theme</x:String>
+                            <x:String>🌙 Dark Theme</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- 大字体切换 - 使用 Frame 替代 Border -->
+            <Frame BorderColor="#E0E0E0" 
+                   CornerRadius="12"
+                   Padding="16"
+                   BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1A1712}"
+                   HasShadow="False">
+                <Grid ColumnDefinitions="*,Auto" ColumnSpacing="16">
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Large Text Mode" 
+                               FontSize="16" 
+                               FontAttributes="Bold"
+                               TextColor="{AppThemeBinding Light=#2F7A4F, Dark=#8CE6A1}"/>
+                        <Label Text="Increase text size across the app" 
+                               FontSize="13"
+                               TextColor="{AppThemeBinding Light=#8B6D55, Dark=#D8C4AC}"/>
+                    </VerticalStackLayout>
+                    <Switch x:Name="LargeTextSwitch"
+                            Grid.Column="1"
+                            Toggled="OnLargeTextToggled"
+                            SemanticProperties.Hint="Toggle large text mode"/>
+                </Grid>
+            </Frame>
+
+            <!-- 预览区域 -->
+            <Frame BackgroundColor="{AppThemeBinding Light=#FFF0C9, Dark=#312316}"
+                   CornerRadius="12"
+                   Padding="16"
+                   HasShadow="False">
+                <VerticalStackLayout Spacing="8">
+                    <Label x:Name="PreviewTitle"
+                           Text="Large Text Preview"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="{AppThemeBinding Light=#A95517, Dark=#FFD18E}"/>
+                    <Label x:Name="PreviewBody"
+                           Text="When enabled, this text becomes visibly larger to demonstrate the accessibility feature."
+                           FontSize="14"
+                           TextColor="{AppThemeBinding Light=#6E5A47, Dark=#D8C4AC}"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Label x:Name="StatusLabel"
+                   Text="Settings ready"
+                   FontAttributes="Bold"
+                   TextColor="{AppThemeBinding Light=#D9472B, Dark=#FFB15D}"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

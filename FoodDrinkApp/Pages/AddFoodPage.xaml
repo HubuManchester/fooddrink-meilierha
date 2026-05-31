@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:FoodDrinkApp.ViewModels"
+             x:Class="FoodDrinkApp.Pages.AddFoodPage"
+             Title="Add New Food">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="🍽️ Add New Recipe" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center"
+                   TextColor="#333333"/>
+
+            <Label Text="Food Name *" 
+                   FontSize="14" 
+                   FontAttributes="Bold"
+                   TextColor="#666666"/>
+            <!-- 移除 Padding 和 CornerRadius，使用 Margin 和 内部布局替代 -->
+            <Frame BorderColor="#E0E0E0" 
+                   CornerRadius="10"
+                   Padding="0"
+                   Margin="0,5,0,0"
+                   HasShadow="False">
+                <Entry Text="{Binding FoodName}"
+                       Placeholder="e.g., Spaghetti Bolognese"
+                       PlaceholderColor="LightGray"
+                       FontSize="16"
+                       Margin="15,10"
+                       Background="Transparent"/>
+            </Frame>
+
+            <Label Text="Food Type *" 
+                   FontSize="14" 
+                   FontAttributes="Bold"
+                   TextColor="#666666"/>
+            <Frame BorderColor="#E0E0E0" 
+                   CornerRadius="10"
+                   Padding="0"
+                   Margin="0,5,0,0"
+                   HasShadow="False">
+                <Entry Text="{Binding FoodType}"
+                       Placeholder="e.g., Home, Drink, Dessert, Fast Food"
+                       PlaceholderColor="LightGray"
+                       FontSize="16"
+                       Margin="15,10"
+                       Background="Transparent"/>
+            </Frame>
+
+            <Label Text="Cooking Steps" 
+                   FontSize="14" 
+                   FontAttributes="Bold"
+                   TextColor="#666666"/>
+            <Frame BorderColor="#E0E0E0" 
+                   CornerRadius="10"
+                   Padding="0"
+                   Margin="0,5,0,0"
+                   HasShadow="False">
+                <Editor Text="{Binding FoodSteps}"
+                        Placeholder="1. First step...&#x0a;2. Second step...&#x0a;3. Third step..."
+                        PlaceholderColor="LightGray"
+                        HeightRequest="150"
+                        FontSize="14"
+                        Margin="15,10"
+                        Background="Transparent"/>
+            </Frame>
+
+            <Label Text="* Required fields" 
+                   FontSize="12" 
+                   TextColor="Red"
+                   HorizontalOptions="End"/>
+
+            <Button Text="Submit Food"
+                    BackgroundColor="#4CAF50"
+                    TextColor="White"
+                    CornerRadius="15"
+                    HeightRequest="50"
+                    FontSize="16"
+                    FontAttributes="Bold"
+                    Command="{Binding SubmitFoodCommand}"
+                    IsEnabled="{Binding IsNotBusy}"
+                    Margin="0,20,0,0"/>
+
+            <ActivityIndicator IsVisible="{Binding IsBusy}"
+                               IsRunning="{Binding IsBusy}"
+                               Color="#4CAF50"
+                               HeightRequest="40"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
