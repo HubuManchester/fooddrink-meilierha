@@ -14,7 +14,6 @@ public class FoodService
         private set
         {
             foods = value;
-            // 触发集合改变事件
             OnFoodsChanged?.Invoke(this, EventArgs.Empty);
         }
     }
@@ -35,7 +34,7 @@ public class FoodService
             Name = "Tomato Egg",
             Type = "Home Cooking",
             Steps = "1. Cut tomatoes into pieces.\n2. Beat eggs in a bowl.\n3. Heat oil in a pan.\n4. Fry eggs and remove.\n5. Cook tomatoes until soft.\n6. Mix eggs back.\n7. Season and serve.",
-            ImageFile = ""
+            ImageFile = "tomatoegg.png"   // 添加图片文件名
         });
 
         foods.Add(new FoodItem
@@ -44,7 +43,7 @@ public class FoodService
             Name = "Milk Tea",
             Type = "Drink",
             Steps = "1. Boil water.\n2. Add tea bags and steep.\n3. Add milk and sugar.\n4. Serve hot or over ice.",
-            ImageFile = ""
+            ImageFile = "milktea.png"     // 添加图片文件名
         });
 
         foods.Add(new FoodItem
@@ -53,14 +52,13 @@ public class FoodService
             Name = "Chocolate Cake",
             Type = "Dessert",
             Steps = "1. Preheat oven to 350°F.\n2. Mix dry ingredients.\n3. Add wet ingredients.\n4. Bake for 30 minutes.\n5. Let cool and serve.",
-            ImageFile = ""
+            ImageFile = "cake.png"        // 添加图片文件名
         });
     }
 
     public void AddFood(FoodItem newFood)
     {
         foods.Add(newFood);
-        // 通知数据已改变
         OnFoodsChanged?.Invoke(this, EventArgs.Empty);
     }
 }

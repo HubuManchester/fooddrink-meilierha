@@ -78,7 +78,8 @@
                                CornerRadius="15"
                                BackgroundColor="White">
                             <Grid ColumnDefinitions="60,*">
-                                <Label Text="🍲" 
+                                <!-- 使用 Emoji 图标 -->
+                                <Label Text="{Binding FoodEmoji}" 
                                        FontSize="35"
                                        HorizontalOptions="Center"
                                        VerticalOptions="Center"/>

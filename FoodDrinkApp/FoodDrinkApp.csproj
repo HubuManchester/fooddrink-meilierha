@@ -57,18 +57,6 @@
 
 	<ItemGroup>
 	  <MauiImage Remove="Resources\Images\cake.png" />
-	  <MauiImage Remove="Resources\Images\default.png" />
-	  <MauiImage Remove="Resources\Images\dotnet_bot.png" />
-	  <MauiImage Remove="Resources\Images\milktea.png" />
-	  <MauiImage Remove="Resources\Images\tomatoegg.png" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiAsset Include="Resources\Images\cake.png" />
-	  <MauiAsset Include="Resources\Images\default.png" />
-	  <MauiAsset Include="Resources\Images\dotnet_bot.png" Resize="True" BaseSize="300,185" />
-	  <MauiAsset Include="Resources\Images\milktea.png" />
-	  <MauiAsset Include="Resources\Images\tomatoegg.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -88,6 +76,10 @@
 	  <Compile Update="Pages\SettingsPage.xaml.cs">
 	    <DependentUpon>SettingsPage.xaml</DependentUpon>
 	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiImage Update="Resources\Images\dotnet_bot.png" Resize="True" BaseSize="300,185" />
 	</ItemGroup>
 
 	<ItemGroup>

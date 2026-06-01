@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 using FoodDrinkApp.Models;
 using FoodDrinkApp.Services;
 using System.Collections.ObjectModel;
+using System.Text.Json;
 
 namespace FoodDrinkApp.ViewModels;
 
@@ -38,7 +39,6 @@ public partial class FoodsViewModel : BaseViewModel
         try
         {
             IsBusy = true;
-
             _allFoods = _foodService.Foods.ToList();
             FilterFoods();
         }
@@ -73,12 +73,16 @@ public partial class FoodsViewModel : BaseViewModel
     {
         if (food == null) return;
 
-        var parameters = new Dictionary<string, object>
+        try
         {
-            { "Food", food }
-        };
-
-        await Shell.Current.GoToAsync("FoodDetailPage", true, parameters);
+            var json = JsonSerializer.Serialize(food);
+            var encodedJson = Uri.EscapeDataString(json);
+            await Shell.Current.GoToAsync($"FoodDetailPage?Food={encodedJson}");
+        }
+        catch (Exception ex)
+        {
+            await Shell.Current.DisplayAlert("Error", $"Failed to open details: {ex.Message}", "OK");
+        }
     }
 
     [RelayCommand]

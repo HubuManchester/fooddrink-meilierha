@@ -1,6 +1,5 @@
 ﻿using FoodDrinkApp.Services;
 using FoodDrinkApp.ViewModels;
-using System.Security.Cryptography;
 
 namespace FoodDrinkApp.Pages;
 
@@ -51,16 +50,21 @@ public partial class MainPage : ContentPage
         await Shell.Current.GoToAsync("AddFoodPage");
     }
 
-    // 详情按钮
+    // 详情按钮 - 使用 JSON 序列化
     private async void OnDetailsClicked(object sender, EventArgs e)
     {
         if (sender is Button button && button.CommandParameter is FoodDrinkApp.Models.FoodItem food)
         {
-            var parameters = new Dictionary<string, object>
+            try
             {
-                { "Food", food }
-            };
-            await Shell.Current.GoToAsync("FoodDetailPage", true, parameters);
+                var json = System.Text.Json.JsonSerializer.Serialize(food);
+                var encodedJson = Uri.EscapeDataString(json);
+                await Shell.Current.GoToAsync($"FoodDetailPage?Food={encodedJson}");
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", $"Failed to open details: {ex.Message}", "OK");
+            }
         }
     }
 
@@ -91,10 +95,8 @@ public partial class MainPage : ContentPage
                 return;
             }
 
-            // 显示坐标
             LocationLabel.Text = $"Lat: {location.Latitude:F4}, Lon: {location.Longitude:F4}";
 
-            // 尝试获取地址
             try
             {
                 var placemarks = await Geocoding.Default.GetPlacemarksAsync(location);
@@ -114,7 +116,7 @@ public partial class MainPage : ContentPage
                     }
                 }
             }
-            catch { /* 如果地理编码失败，只显示坐标 */ }
+            catch { }
 
             HapticFeedback.Default.Perform(HapticFeedbackType.Click);
             SemanticScreenReader.Announce($"Your location is {LocationLabel.Text}");

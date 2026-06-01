@@ -1,27 +1,35 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewmodels="clr-namespace:FoodDrinkApp.ViewModels"
-             xmlns:models="clr-namespace:FoodDrinkApp.Models"
              x:Class="FoodDrinkApp.Pages.FoodDetailPage"
-             Title="{Binding Food.Name}">
+             Title="Food Details">
 
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="15">
 
-            <!-- 食物图标 - 使用 Emoji -->
+            <!-- 食物图片区域 -->
             <Frame CornerRadius="20" 
                    BackgroundColor="#F5F5F5"
-                   HeightRequest="120"
-                   HasShadow="False">
-                <Label Text="🍲" 
-                       FontSize="60"
-                       HorizontalOptions="Center"
-                       VerticalOptions="Center"/>
+                   HeightRequest="200"
+                   HasShadow="False"
+                   Padding="10">
+                <Grid>
+                    <Image x:Name="FoodPhotoImage"
+                           Aspect="AspectFit"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           IsVisible="False"/>
+                    <Label x:Name="FoodEmojiLabel"
+                           Text="🍲"
+                           FontSize="80"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           IsVisible="True"/>
+                </Grid>
             </Frame>
 
             <!-- 食物名称 -->
-            <Label Text="{Binding Food.Name}" 
+            <Label x:Name="NameLabel" 
                    FontSize="28" 
                    FontAttributes="Bold"
                    HorizontalOptions="Center"
@@ -33,10 +41,9 @@
                    Padding="12,5"
                    HorizontalOptions="Center"
                    HasShadow="False">
-                <Label Text="{Binding Food.Type}" 
+                <Label x:Name="TypeLabel"
                        FontSize="16" 
-                       TextColor="White"
-                       Background="Transparent"/>
+                       TextColor="White"/>
             </Frame>
 
             <!-- 分隔线 -->
@@ -49,24 +56,33 @@
                    TextColor="#333333"/>
 
             <!-- 步骤内容 -->
-            <Label Text="{Binding Food.Steps}" 
+            <Label x:Name="StepsLabel" 
                    FontSize="15" 
-                   TextColor="#555555"
-                   LineBreakMode="WordWrap"/>
+                   TextColor="#555555"/>
 
-            <!-- 朗读按钮（Text-to-Speech硬件功能） -->
-            <Button Text="🔊 Read Aloud"
-                    BackgroundColor="#9C27B0"
-                    TextColor="White"
-                    CornerRadius="15"
-                    HeightRequest="50"
-                    FontSize="16"
-                    FontAttributes="Bold"
-                    Command="{Binding SpeakStepsCommand}"
-                    Margin="0,20,0,0"/>
+            <!-- 朗读和暂停按钮 - 并排 -->
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="15" Margin="0,20,0,0">
+                <Button Text="🔊 Read Aloud"
+                        BackgroundColor="#9C27B0"
+                        TextColor="White"
+                        CornerRadius="15"
+                        HeightRequest="50"
+                        FontSize="16"
+                        FontAttributes="Bold"
+                        Clicked="OnSpeakClicked"/>
 
-            <!-- 提示信息 -->
-            <Label Text="Tap 'Read Aloud' to hear the cooking steps (Text-to-Speech)" 
+                <Button Text="⏹️ Stop"
+                        Grid.Column="1"
+                        BackgroundColor="#FF5722"
+                        TextColor="White"
+                        CornerRadius="15"
+                        HeightRequest="50"
+                        FontSize="16"
+                        FontAttributes="Bold"
+                        Clicked="OnStopSpeakingClicked"/>
+            </Grid>
+
+            <Label Text="Tap 'Read Aloud' to hear the cooking steps. Tap 'Stop' to cancel." 
                    FontSize="11" 
                    TextColor="Gray"
                    HorizontalOptions="Center"
