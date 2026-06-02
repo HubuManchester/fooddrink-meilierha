@@ -51,7 +51,7 @@
             </Grid>
         </Border>
 
-        <!-- 食物列表 -->
+        <!-- 食物列表 - 使用 SwipeView 实现滑动删除 -->
         <RefreshView Grid.Row="2"
                      x:Name="FoodRefreshView" 
                      Refreshing="OnRefreshing">
@@ -72,43 +72,97 @@
                 </CollectionView.EmptyView>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Frame Margin="10" 
-                               Padding="10" 
-                               BorderColor="#E0E0E0" 
-                               CornerRadius="15"
-                               BackgroundColor="White">
-                            <Grid ColumnDefinitions="60,*">
-                                <!-- 使用 Emoji 图标 -->
-                                <Label Text="{Binding FoodEmoji}" 
-                                       FontSize="35"
-                                       HorizontalOptions="Center"
-                                       VerticalOptions="Center"/>
+                        <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItems Mode="Reveal">
+                                    <!-- 编辑按钮 - 圆形 -->
+                                    <SwipeItemView>
+                                        <SwipeItemView.Content>
+                                            <Frame BackgroundColor="#2196F3"
+                                                   WidthRequest="70"
+                                                   HeightRequest="70"
+                                                   CornerRadius="35"
+                                                   Margin="5,5,0,5"
+                                                   Padding="0"
+                                                   HasShadow="False">
+                                                <Frame.GestureRecognizers>
+                                                    <TapGestureRecognizer 
+                                                        CommandParameter="{Binding .}"
+                                                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:FoodsViewModel}}, Path=EditFoodCommand}"/>
+                                                </Frame.GestureRecognizers>
+                                                <VerticalStackLayout Spacing="5"
+                                                                     HorizontalOptions="Center"
+                                                                     VerticalOptions="Center">
+                                                    <Label Text="✏️" FontSize="20" TextColor="White" HorizontalOptions="Center"/>
+                                                    <Label Text="Edit" FontSize="10" TextColor="White" HorizontalOptions="Center"/>
+                                                </VerticalStackLayout>
+                                            </Frame>
+                                        </SwipeItemView.Content>
+                                    </SwipeItemView>
+                                    <!-- 删除按钮 - 圆形 -->
+                                    <SwipeItemView>
+                                        <SwipeItemView.Content>
+                                            <Frame BackgroundColor="#F44336"
+                                                   WidthRequest="70"
+                                                   HeightRequest="70"
+                                                   CornerRadius="35"
+                                                   Margin="0,5,5,5"
+                                                   Padding="0"
+                                                   HasShadow="False">
+                                                <Frame.GestureRecognizers>
+                                                    <TapGestureRecognizer 
+                                                        CommandParameter="{Binding .}"
+                                                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:FoodsViewModel}}, Path=DeleteFoodCommand}"/>
+                                                </Frame.GestureRecognizers>
+                                                <VerticalStackLayout Spacing="5"
+                                                                     HorizontalOptions="Center"
+                                                                     VerticalOptions="Center">
+                                                    <Label Text="🗑️" FontSize="20" TextColor="White" HorizontalOptions="Center"/>
+                                                    <Label Text="Delete" FontSize="10" TextColor="White" HorizontalOptions="Center"/>
+                                                </VerticalStackLayout>
+                                            </Frame>
+                                        </SwipeItemView.Content>
+                                    </SwipeItemView>
+                                </SwipeItems>
+                            </SwipeView.RightItems>
 
-                                <VerticalStackLayout Grid.Column="1" Spacing="5">
-                                    <Label Text="{Binding Name}" 
-                                           FontSize="18" 
-                                           FontAttributes="Bold"
-                                           TextColor="#333333"/>
-                                    <Label Text="{Binding Type}" 
-                                           FontSize="14"
-                                           TextColor="#666666"/>
-                                    <Label Text="{Binding Steps}" 
-                                           FontSize="12"
-                                           TextColor="#999999"
-                                           MaxLines="2"
-                                           LineBreakMode="TailTruncation"/>
+                            <!-- 食物卡片 - 点击查看详情 -->
+                            <Frame Margin="10" 
+                                   Padding="10" 
+                                   BorderColor="#E0E0E0" 
+                                   CornerRadius="15"
+                                   BackgroundColor="White"
+                                   HasShadow="False">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer 
+                                        NumberOfTapsRequired="1"
+                                        CommandParameter="{Binding .}"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:FoodsViewModel}}, Path=GoToDetailCommand}"/>
+                                </Frame.GestureRecognizers>
 
-                                    <Button Text="View Details" 
-                                            BackgroundColor="#4CAF50" 
-                                            TextColor="White"
-                                            CornerRadius="10"
-                                            HeightRequest="35"
-                                            CommandParameter="{Binding .}"
-                                            Clicked="OnDetailsClicked"
-                                            HorizontalOptions="Start"/>
-                                </VerticalStackLayout>
-                            </Grid>
-                        </Frame>
+                                <Grid ColumnDefinitions="60,*">
+                                    <Label Text="{Binding FoodEmoji}" 
+                                           FontSize="35"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center"/>
+
+                                    <VerticalStackLayout Grid.Column="1" Spacing="5">
+                                        <Label Text="{Binding Name}" 
+                                               FontSize="18" 
+                                               FontAttributes="Bold"
+                                               TextColor="#333333"/>
+                                        <Label Text="{Binding Type}" 
+                                               FontSize="14"
+                                               TextColor="#666666"/>
+                                        <Label Text="{Binding Steps}" 
+                                               FontSize="12"
+                                               TextColor="#999999"
+                                               MaxLines="2"
+                                               LineBreakMode="TailTruncation"/>
+                                    </VerticalStackLayout>
+                                </Grid>
+                            </Frame>
+                        </SwipeView>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

@@ -3,7 +3,6 @@ using CommunityToolkit.Mvvm.Input;
 using FoodDrinkApp.Models;
 using FoodDrinkApp.Services;
 using System.Collections.ObjectModel;
-using System.Text.Json;
 
 namespace FoodDrinkApp.ViewModels;
 
@@ -68,20 +67,41 @@ public partial class FoodsViewModel : BaseViewModel
         }
     }
 
+    // 点击查看详情 - 使用静态变量传递，不通过URL
     [RelayCommand]
     private async Task GoToDetail(FoodItem food)
     {
         if (food == null) return;
 
-        try
+        FoodTransferService.SelectedFood = food;
+        await Shell.Current.GoToAsync("FoodDetailPage");
+    }
+
+    // 编辑食物
+    [RelayCommand]
+    private async Task EditFood(FoodItem food)
+    {
+        if (food == null) return;
+
+        FoodTransferService.SelectedFood = food;
+        await Shell.Current.GoToAsync("EditFoodPage");
+    }
+
+    // 删除食物
+    [RelayCommand]
+    private async Task DeleteFood(FoodItem food)
+    {
+        if (food == null) return;
+
+        var confirm = await Shell.Current.DisplayAlert("Confirm Delete",
+            $"Are you sure you want to delete \"{food.Name}\"?",
+            "Yes", "No");
+
+        if (confirm)
         {
-            var json = JsonSerializer.Serialize(food);
-            var encodedJson = Uri.EscapeDataString(json);
-            await Shell.Current.GoToAsync($"FoodDetailPage?Food={encodedJson}");
-        }
-        catch (Exception ex)
-        {
-            await Shell.Current.DisplayAlert("Error", $"Failed to open details: {ex.Message}", "OK");
+            _foodService.DeleteFood(food.Id);
+            LoadFoods();
+            await Shell.Current.DisplayAlert("Deleted", $"\"{food.Name}\" has been deleted.", "OK");
         }
     }
 

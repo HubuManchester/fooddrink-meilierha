@@ -14,62 +14,40 @@ public partial class AddFoodPage : ContentPage
         _foodService = foodService;
     }
 
-    // 拍照功能 - 包含模拟器检测
+    // 拍照功能
     private async void OnTakePhotoClicked(object sender, EventArgs e)
     {
         try
         {
-            // 检测是否是模拟器
-            if (DeviceInfo.Current.DeviceType == DeviceType.Virtual)
-            {
-                await DisplayAlert("Simulator Notice",
-                    "Camera is not available in Android emulator.\n\n" +
-                    "This feature works on physical devices.\n" +
-                    "You can submit without taking a photo.\n\n" +
-                    "The code is fully implemented and ready for real devices.",
-                    "OK");
-                return;
-            }
-
-            // 检查相机是否可用
             if (!MediaPicker.Default.IsCaptureSupported)
             {
-                await DisplayAlert("Not Supported", "Camera is not supported on this device.", "OK");
+                await DisplayAlert("Not Supported", "This device does not support camera capture.", "OK");
                 return;
             }
 
-            // 请求权限并拍照
             var photo = await MediaPicker.Default.CapturePhotoAsync();
-
             if (photo is null)
             {
-                // 用户取消拍照
                 return;
             }
 
-            // 读取图片数据
-            using var stream = await photo.OpenReadAsync();
+            await using var stream = await photo.OpenReadAsync();
             using var memoryStream = new MemoryStream();
             await stream.CopyToAsync(memoryStream);
             _photoBytes = memoryStream.ToArray();
 
-            // 显示预览
+            // 使用 FoodPhotoPreview（与 XAML 中的 x:Name 一致）
             FoodPhotoPreview.Source = ImageSource.FromStream(() => new MemoryStream(_photoBytes));
 
-            // 触觉反馈
             HapticFeedback.Default.Perform(HapticFeedbackType.Click);
-        }
-        catch (FeatureNotSupportedException)
-        {
-            await DisplayAlert("Not Supported", "Camera is not supported on this device.", "OK");
         }
         catch (PermissionException)
         {
-            await DisplayAlert("Permission Denied", "Camera permission is required to take photos.", "OK");
+            await DisplayAlert("Permission Denied", "Camera permission was denied. Enable camera access in device settings.", "OK");
         }
         catch (Exception ex)
         {
-            await DisplayAlert("Error", $"Failed to take photo: {ex.Message}", "OK");
+            await DisplayAlert("Camera Error", $"Failed to capture photo: {ex.Message}", "OK");
         }
     }
 
@@ -106,6 +84,13 @@ public partial class AddFoodPage : ContentPage
 
             HapticFeedback.Default.Perform(HapticFeedbackType.Click);
             await DisplayAlert("Success", $"\"{newFood.Name}\" has been added!", "OK");
+
+            // 清空表单
+            NameEntry.Text = string.Empty;
+            CategoryPicker.SelectedIndex = -1;
+            StepsEditor.Text = string.Empty;
+            _photoBytes = null;
+            FoodPhotoPreview.Source = null;
 
             await Shell.Current.GoToAsync("..");
         }

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FoodDrinkApp.Pages.AddFoodPage"
-             Title="Add New Food">
+             x:Class="FoodDrinkApp.Pages.EditFoodPage"
+             Title="Edit Food">
 
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="15">
 
-            <Label Text="🍽️ Add New Recipe" 
+            <Label Text="✏️ Edit Recipe" 
                    FontSize="24" 
                    FontAttributes="Bold" 
                    HorizontalOptions="Center"
                    TextColor="#333333"/>
 
-            <!-- 拍照区域 -->
+            <!-- 拍照区域 - 完全参照 AddFoodPage -->
             <Border StrokeThickness="1"
                     Stroke="{AppThemeBinding Light=#F0D6B8, Dark=#3E3023}"
                     BackgroundColor="{AppThemeBinding Light=#FFFFFA, Dark=#1A1712}"
@@ -45,7 +45,7 @@
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="8" />
                         </Border.StrokeShape>
-                        <!-- 使用 FoodPhotoPreview -->
+                        <!-- 注意：这里的 x:Name 是 FoodPhotoPreview，和 AddFoodPage 一致 -->
                         <Image x:Name="FoodPhotoPreview"
                                Aspect="AspectFill"
                                SemanticProperties.Description="Captured food photo preview" />
@@ -58,8 +58,7 @@
                    FontAttributes="Bold"
                    TextColor="#666666"/>
             <Entry x:Name="NameEntry"
-                   Placeholder="e.g., Spaghetti Bolognese"
-                   PlaceholderColor="LightGray"
+                   Placeholder="Food name"
                    FontSize="16"
                    BackgroundColor="#F5F5F5"
                    Margin="0,5,0,0"/>
@@ -87,8 +86,7 @@
                    FontAttributes="Bold"
                    TextColor="#666666"/>
             <Editor x:Name="StepsEditor"
-                    Placeholder="1. First step...&#x0a;2. Second step...&#x0a;3. Third step..."
-                    PlaceholderColor="LightGray"
+                    Placeholder="Cooking steps..."
                     HeightRequest="120"
                     FontSize="14"
                     BackgroundColor="#F5F5F5"
@@ -100,14 +98,14 @@
                    FontSize="13"
                    IsVisible="False"/>
 
-            <Button Text="Submit Food"
+            <Button Text="Save Changes"
                     BackgroundColor="#4CAF50"
                     TextColor="White"
                     CornerRadius="15"
                     HeightRequest="50"
                     FontSize="16"
                     FontAttributes="Bold"
-                    Clicked="OnSubmitClicked"
+                    Clicked="OnSaveClicked"
                     Margin="0,20,0,0"/>
 
             <ActivityIndicator x:Name="LoadingIndicator"

@@ -7,15 +7,14 @@
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="15">
 
-            <!-- 食物图片区域 -->
             <Frame CornerRadius="20" 
                    BackgroundColor="#F5F5F5"
-                   HeightRequest="200"
+                   HeightRequest="220"
                    HasShadow="False"
-                   Padding="10">
+                   Padding="0">
                 <Grid>
                     <Image x:Name="FoodPhotoImage"
-                           Aspect="AspectFit"
+                           Aspect="AspectFill"
                            HorizontalOptions="Center"
                            VerticalOptions="Center"
                            IsVisible="False"/>
@@ -28,14 +27,12 @@
                 </Grid>
             </Frame>
 
-            <!-- 食物名称 -->
             <Label x:Name="NameLabel" 
                    FontSize="28" 
                    FontAttributes="Bold"
                    HorizontalOptions="Center"
                    TextColor="#333333"/>
 
-            <!-- 食物类型标签 -->
             <Frame CornerRadius="15"
                    BackgroundColor="#4CAF50"
                    Padding="12,5"
@@ -46,21 +43,17 @@
                        TextColor="White"/>
             </Frame>
 
-            <!-- 分隔线 -->
             <BoxView HeightRequest="1" BackgroundColor="#E0E0E0" Margin="0,10"/>
 
-            <!-- 步骤标题 -->
             <Label Text="📋 Cooking Steps" 
                    FontSize="20" 
                    FontAttributes="Bold"
                    TextColor="#333333"/>
 
-            <!-- 步骤内容 -->
             <Label x:Name="StepsLabel" 
                    FontSize="15" 
                    TextColor="#555555"/>
 
-            <!-- 朗读和暂停按钮 - 并排 -->
             <Grid ColumnDefinitions="*,*" ColumnSpacing="15" Margin="0,20,0,0">
                 <Button Text="🔊 Read Aloud"
                         BackgroundColor="#9C27B0"

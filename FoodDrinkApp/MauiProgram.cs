@@ -30,6 +30,8 @@ public static class MauiProgram
         builder.Services.AddTransient<MainPage>();
         builder.Services.AddTransient<AddFoodPage>();
         builder.Services.AddTransient<FoodDetailPage>();
+        builder.Services.AddTransient<SettingsPage>();
+        builder.Services.AddTransient<EditFoodPage>();  // 确保这行存在
 
 #if DEBUG
         builder.Logging.AddDebug();

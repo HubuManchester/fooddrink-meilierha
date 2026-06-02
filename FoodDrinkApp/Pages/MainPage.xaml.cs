@@ -1,5 +1,6 @@
 ﻿using FoodDrinkApp.Services;
 using FoodDrinkApp.ViewModels;
+using Microsoft.Maui.Devices.Sensors;
 
 namespace FoodDrinkApp.Pages;
 
@@ -7,6 +8,8 @@ public partial class MainPage : ContentPage
 {
     private FoodsViewModel _viewModel;
     private CancellationTokenSource _locationCancellation;
+    private DateTime _lastShakeTime;
+    private const double ShakeThreshold = 2.5;
 
     public MainPage(FoodsViewModel viewModel)
     {
@@ -14,7 +17,6 @@ public partial class MainPage : ContentPage
         _viewModel = viewModel;
         BindingContext = _viewModel;
 
-        // 绑定食物列表
         FoodCollection.ItemsSource = _viewModel.Foods;
     }
 
@@ -23,15 +25,114 @@ public partial class MainPage : ContentPage
         base.OnAppearing();
         AccessibilityService.ApplyFontScale(this);
         _viewModel.LoadFoods();
+
+        // 每次页面出现时重新启动加速度计
+        StartAccelerometer();
     }
 
     protected override void OnDisappearing()
     {
-        _locationCancellation?.Cancel();
         base.OnDisappearing();
+        _locationCancellation?.Cancel();
+
+        // 页面离开时停止加速度计
+        StopAccelerometer();
     }
 
-    // 搜索功能
+    private void StartAccelerometer()
+    {
+        try
+        {
+            if (Accelerometer.Default.IsSupported)
+            {
+                // 先停止再重新开始，确保重新注册
+                if (Accelerometer.Default.IsMonitoring)
+                {
+                    Accelerometer.Default.Stop();
+                    Accelerometer.Default.ReadingChanged -= OnAccelerometerReadingChanged;
+                }
+
+                Accelerometer.Default.ReadingChanged += OnAccelerometerReadingChanged;
+                Accelerometer.Default.Start(SensorSpeed.UI);
+            }
+        }
+        catch (Exception ex)
+        {
+            System.Diagnostics.Debug.WriteLine($"StartAccelerometer error: {ex.Message}");
+        }
+    }
+
+    private void StopAccelerometer()
+    {
+        try
+        {
+            if (Accelerometer.Default.IsSupported && Accelerometer.Default.IsMonitoring)
+            {
+                Accelerometer.Default.ReadingChanged -= OnAccelerometerReadingChanged;
+                Accelerometer.Default.Stop();
+            }
+        }
+        catch (Exception ex)
+        {
+            System.Diagnostics.Debug.WriteLine($"StopAccelerometer error: {ex.Message}");
+        }
+    }
+
+    private void OnAccelerometerReadingChanged(object sender, AccelerometerChangedEventArgs e)
+    {
+        var data = e.Reading;
+        var totalForce = Math.Abs(data.Acceleration.X) +
+                         Math.Abs(data.Acceleration.Y) +
+                         Math.Abs(data.Acceleration.Z);
+
+        if (totalForce > ShakeThreshold)
+        {
+            var now = DateTime.Now;
+            if ((now - _lastShakeTime).TotalMilliseconds > 1000)  // 1秒内只触发一次
+            {
+                _lastShakeTime = now;
+                MainThread.BeginInvokeOnMainThread(async () =>
+                {
+                    await OnShakeDetected();
+                });
+            }
+        }
+    }
+
+    private async Task OnShakeDetected()
+    {
+        try
+        {
+            Vibration.Default.Vibrate(TimeSpan.FromMilliseconds(200));
+            HapticFeedback.Default.Perform(HapticFeedbackType.Click);
+
+            if (_viewModel.Foods.Any())
+            {
+                var random = new Random();
+                var randomFood = _viewModel.Foods[random.Next(_viewModel.Foods.Count)];
+
+                var shouldOpen = await DisplayAlert("🎲 Shake Detected!",
+                    $"Random recommendation: {randomFood.Name}\n\nWould you like to view details?",
+                    "Yes", "No");
+
+                if (shouldOpen)
+                {
+                    FoodTransferService.SelectedFood = randomFood;
+                    await Shell.Current.GoToAsync("FoodDetailPage");
+                }
+            }
+            else
+            {
+                await DisplayAlert("🎲 Shake Detected!",
+                    "No foods available. Please add some foods first.", "OK");
+            }
+        }
+        catch (Exception ex)
+        {
+            System.Diagnostics.Debug.WriteLine($"OnShakeDetected error: {ex.Message}");
+        }
+    }
+
     private void OnSearchTextChanged(object sender, TextChangedEventArgs e)
     {
         _viewModel.SearchText = e.NewTextValue;
@@ -44,31 +145,20 @@ public partial class MainPage : ContentPage
         _viewModel.FilterFoods();
     }
 
-    // 添加按钮
     private async void OnAddClicked(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("AddFoodPage");
     }
 
-    // 详情按钮 - 使用 JSON 序列化
     private async void OnDetailsClicked(object sender, EventArgs e)
     {
         if (sender is Button button && button.CommandParameter is FoodDrinkApp.Models.FoodItem food)
         {
-            try
-            {
-                var json = System.Text.Json.JsonSerializer.Serialize(food);
-                var encodedJson = Uri.EscapeDataString(json);
-                await Shell.Current.GoToAsync($"FoodDetailPage?Food={encodedJson}");
-            }
-            catch (Exception ex)
-            {
-                await DisplayAlert("Error", $"Failed to open details: {ex.Message}", "OK");
-            }
+            FoodTransferService.SelectedFood = food;
+            await Shell.Current.GoToAsync("FoodDetailPage");
         }
     }
 
-    // 下拉刷新
     private async void OnRefreshing(object sender, EventArgs e)
     {
         _viewModel.LoadFoods();
@@ -77,7 +167,6 @@ public partial class MainPage : ContentPage
         SemanticScreenReader.Announce("Food list refreshed.");
     }
 
-    // 定位功能
     private async void OnGetLocationClicked(object sender, EventArgs e)
     {
         try

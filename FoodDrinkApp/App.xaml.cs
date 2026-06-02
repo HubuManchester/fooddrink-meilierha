@@ -1,12 +1,16 @@
-﻿namespace FoodDrinkApp
-{
-    public partial class App : Application
-    {
-        public App()
-        {
-            InitializeComponent();
+﻿using FoodDrinkApp.Pages;
 
-            MainPage = new AppShell();
-        }
+namespace FoodDrinkApp;
+
+public partial class App : Application
+{
+    public App()
+    {
+        InitializeComponent();
+    }
+
+    protected override Window CreateWindow(IActivationState? activationState)
+    {
+        return new Window(new SplashPage());
     }
 }

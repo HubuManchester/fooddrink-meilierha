@@ -4,33 +4,9 @@ using System.Text.Json;
 
 namespace FoodDrinkApp.Pages;
 
-[QueryProperty(nameof(FoodItemJson), "Food")]
 public partial class FoodDetailPage : ContentPage
 {
     private FoodItem _foodItem = new();
-    private CancellationTokenSource? _cancellationTokenSource;
-
-    public string FoodItemJson
-    {
-        set
-        {
-            try
-            {
-                if (!string.IsNullOrEmpty(value))
-                {
-                    var decodedJson = Uri.UnescapeDataString(value);
-                    _foodItem = JsonSerializer.Deserialize<FoodItem>(decodedJson) ?? new FoodItem();
-                    BindingContext = _foodItem;
-                    RenderPage();
-                }
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine($"Error deserializing: {ex.Message}");
-                _foodItem = new FoodItem();
-            }
-        }
-    }
 
     public FoodDetailPage()
     {
@@ -40,12 +16,17 @@ public partial class FoodDetailPage : ContentPage
     protected override void OnAppearing()
     {
         base.OnAppearing();
+
+        _foodItem = FoodTransferService.SelectedFood ?? new FoodItem();
+        BindingContext = _foodItem;
+        RenderPage();
+
         AccessibilityService.ApplyFontScale(this);
     }
 
     protected override void OnDisappearing()
     {
-        StopSpeaking();
+        SpeechService.Stop();
         base.OnDisappearing();
     }
 
@@ -84,6 +65,7 @@ public partial class FoodDetailPage : ContentPage
         FoodEmojiLabel.IsVisible = true;
     }
 
+    // 朗读 - 和老师 HardwarePage 一模一样
     private async void OnSpeakClicked(object sender, EventArgs e)
     {
         try
@@ -94,37 +76,19 @@ public partial class FoodDetailPage : ContentPage
                 return;
             }
 
-            StopSpeaking();
-
-            _cancellationTokenSource = new CancellationTokenSource();
-
-            var text = $"Food name: {_foodItem.Name}. Type: {_foodItem.Type}. Steps: {_foodItem.Steps}";
-
-            await TextToSpeech.SpeakAsync(text, _cancellationTokenSource.Token);
-        }
-        catch (OperationCanceledException)
-        {
-            // 用户取消了
+            var text = $"{_foodItem.Name}. {_foodItem.Type}. {_foodItem.Steps}";
+            await SpeechService.SpeakAsync(text);
         }
         catch (Exception ex)
         {
-            await DisplayAlert("Error", $"Failed to read aloud: {ex.Message}", "OK");
+            await DisplayAlert("Text to speech unavailable", ex.Message, "OK");
         }
     }
 
+    
     private void OnStopSpeakingClicked(object sender, EventArgs e)
     {
-        StopSpeaking();
-    }
-
-    private void StopSpeaking()
-    {
-        try
-        {
-            _cancellationTokenSource?.Cancel();
-            _cancellationTokenSource?.Dispose();
-            _cancellationTokenSource = null;
-        }
-        catch { }
+        SpeechService.Stop();
+        SemanticScreenReader.Announce("Reading stopped.");
     }
 }
