@@ -4,9 +4,32 @@ using System.Text.Json;
 
 namespace FoodDrinkApp.Pages;
 
+[QueryProperty(nameof(FoodItemJson), "Food")]
 public partial class FoodDetailPage : ContentPage
 {
     private FoodItem _foodItem = new();
+
+    public string FoodItemJson
+    {
+        set
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    var decodedJson = Uri.UnescapeDataString(value);
+                    _foodItem = JsonSerializer.Deserialize<FoodItem>(decodedJson) ?? new FoodItem();
+                    BindingContext = _foodItem;
+                    RenderPage();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error: {ex.Message}");
+                _foodItem = new FoodItem();
+            }
+        }
+    }
 
     public FoodDetailPage()
     {
@@ -16,11 +39,9 @@ public partial class FoodDetailPage : ContentPage
     protected override void OnAppearing()
     {
         base.OnAppearing();
-
         _foodItem = FoodTransferService.SelectedFood ?? new FoodItem();
         BindingContext = _foodItem;
         RenderPage();
-
         AccessibilityService.ApplyFontScale(this);
     }
 
@@ -65,7 +86,7 @@ public partial class FoodDetailPage : ContentPage
         FoodEmojiLabel.IsVisible = true;
     }
 
-    // 朗读 - 和老师 HardwarePage 一模一样
+    // 朗读 - 使用 SpeechService
     private async void OnSpeakClicked(object sender, EventArgs e)
     {
         try
@@ -85,7 +106,7 @@ public partial class FoodDetailPage : ContentPage
         }
     }
 
-    
+    // 停止 - 使用 SpeechService
     private void OnStopSpeakingClicked(object sender, EventArgs e)
     {
         SpeechService.Stop();

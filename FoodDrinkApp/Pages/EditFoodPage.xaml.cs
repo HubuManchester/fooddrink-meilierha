@@ -18,8 +18,6 @@ public partial class EditFoodPage : ContentPage
     protected override void OnAppearing()
     {
         base.OnAppearing();
-
-        // 从静态变量获取数据
         _foodItem = FoodTransferService.SelectedFood ?? new FoodItem();
         LoadData();
     }
@@ -49,6 +47,13 @@ public partial class EditFoodPage : ContentPage
     {
         try
         {
+            // 检测是否是模拟器
+            if (DeviceInfo.Current.DeviceType == DeviceType.Virtual)
+            {
+                await DisplayAlert("Camera Not Available", "You are using an emulator.\n\nCamera only works on real phones.", "OK");
+                return;
+            }
+
             if (!MediaPicker.Default.IsCaptureSupported)
             {
                 await DisplayAlert("Not Supported", "This device does not support camera capture.", "OK");

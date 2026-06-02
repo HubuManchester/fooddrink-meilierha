@@ -24,7 +24,9 @@ public partial class MainPage : ContentPage
     {
         base.OnAppearing();
         AccessibilityService.ApplyFontScale(this);
-        _viewModel.LoadFoods();
+
+        // 每次页面出现时强制刷新数据
+        _viewModel.ForceRefresh();
 
         // 每次页面出现时重新启动加速度计
         StartAccelerometer();
@@ -45,7 +47,6 @@ public partial class MainPage : ContentPage
         {
             if (Accelerometer.Default.IsSupported)
             {
-                // 先停止再重新开始，确保重新注册
                 if (Accelerometer.Default.IsMonitoring)
                 {
                     Accelerometer.Default.Stop();
@@ -88,7 +89,7 @@ public partial class MainPage : ContentPage
         if (totalForce > ShakeThreshold)
         {
             var now = DateTime.Now;
-            if ((now - _lastShakeTime).TotalMilliseconds > 1000)  // 1秒内只触发一次
+            if ((now - _lastShakeTime).TotalMilliseconds > 1000)
             {
                 _lastShakeTime = now;
                 MainThread.BeginInvokeOnMainThread(async () =>

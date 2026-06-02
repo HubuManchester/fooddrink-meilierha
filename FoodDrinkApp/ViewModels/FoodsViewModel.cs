@@ -17,6 +17,23 @@ public partial class FoodsViewModel : BaseViewModel
     [ObservableProperty]
     private string searchText = string.Empty;
 
+    // 智能搜索关键词映射（仅英文）
+    private readonly Dictionary<string, string[]> _smartSearchMap = new()
+    {
+        { "spicy", new[] { "spicy", "hot", "chili", "pepper", "sichuan", "curry" } },
+        { "hot", new[] { "hot", "spicy", "soup", "steam", "grill", "roast", "warm" } },
+        { "cold", new[] { "cold", "ice", "iced", "cool", "chill", "frozen" } },
+        { "sweet", new[] { "sweet", "dessert", "cake", "chocolate", "honey", "sugar" } },
+        { "fast", new[] { "fast", "quick", "instant", "ready", "simple", "easy" } },
+        { "healthy", new[] { "healthy", "fresh", "salad", "vegan", "light", "organic" } },
+        { "grill", new[] { "grill", "roast", "barbecue", "bbq", "charcoal" } },
+        { "soup", new[] { "soup", "broth", "stew", "warm", "hot" } },
+        { "rice", new[] { "rice", "grain", "staple", "bowl" } },
+        { "noodle", new[] { "noodle", "pasta", "ramen", "udon" } },
+        { "breakfast", new[] { "breakfast", "morning", "egg", "toast", "cereal" } },
+        { "lunch", new[] { "lunch", "dinner", "meal", "main", "entree" } }
+    };
+
     public FoodsViewModel(FoodService foodService)
     {
         _foodService = foodService;
@@ -47,17 +64,35 @@ public partial class FoodsViewModel : BaseViewModel
         }
     }
 
+    // 添加强制刷新方法
+    public void ForceRefresh()
+    {
+        LoadFoods();
+    }
+
     public void FilterFoods()
     {
         var filtered = _allFoods.AsEnumerable();
 
         if (!string.IsNullOrWhiteSpace(SearchText))
         {
-            var searchLower = SearchText.ToLower();
-            filtered = filtered.Where(f =>
-                (f.Name?.ToLower().Contains(searchLower) ?? false) ||
-                (f.Type?.ToLower().Contains(searchLower) ?? false) ||
-                (f.Steps?.ToLower().Contains(searchLower) ?? false));
+            var searchLower = SearchText.ToLower().Trim();
+
+            if (_smartSearchMap.TryGetValue(searchLower, out var mappedTags))
+            {
+                filtered = filtered.Where(f =>
+                    f.Name.ToLower().Contains(searchLower) ||
+                    f.Type.ToLower().Contains(searchLower) ||
+                    f.Steps.ToLower().Contains(searchLower) ||
+                    mappedTags.Any(tag => f.Name.ToLower().Contains(tag) || f.Type.ToLower().Contains(tag)));
+            }
+            else
+            {
+                filtered = filtered.Where(f =>
+                    f.Name.ToLower().Contains(searchLower) ||
+                    f.Type.ToLower().Contains(searchLower) ||
+                    f.Steps.ToLower().Contains(searchLower));
+            }
         }
 
         Foods.Clear();
@@ -67,7 +102,6 @@ public partial class FoodsViewModel : BaseViewModel
         }
     }
 
-    // 点击查看详情 - 使用静态变量传递，不通过URL
     [RelayCommand]
     private async Task GoToDetail(FoodItem food)
     {
@@ -77,7 +111,6 @@ public partial class FoodsViewModel : BaseViewModel
         await Shell.Current.GoToAsync("FoodDetailPage");
     }
 
-    // 编辑食物
     [RelayCommand]
     private async Task EditFood(FoodItem food)
     {
@@ -87,7 +120,6 @@ public partial class FoodsViewModel : BaseViewModel
         await Shell.Current.GoToAsync("EditFoodPage");
     }
 
-    // 删除食物
     [RelayCommand]
     private async Task DeleteFood(FoodItem food)
     {
@@ -101,7 +133,6 @@ public partial class FoodsViewModel : BaseViewModel
         {
             _foodService.DeleteFood(food.Id);
             LoadFoods();
-            await Shell.Current.DisplayAlert("Deleted", $"\"{food.Name}\" has been deleted.", "OK");
         }
     }
 

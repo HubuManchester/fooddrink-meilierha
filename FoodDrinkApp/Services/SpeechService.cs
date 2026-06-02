@@ -12,13 +12,12 @@ public static class SpeechService
 
         try
         {
+            // 需要传 SpeechOptions 才能带 CancellationToken
             var options = new SpeechOptions();
             await TextToSpeech.Default.SpeakAsync(text, options, currentSpeech.Token);
         }
         catch (OperationCanceledException)
         {
-            // 用户取消了朗读
-            System.Diagnostics.Debug.WriteLine("TTS cancelled by user");
         }
         catch (Exception ex)
         {
@@ -30,19 +29,8 @@ public static class SpeechService
     public static void Stop()
     {
         if (currentSpeech is null) return;
-
-        try
-        {
-            currentSpeech.Cancel();
-            currentSpeech.Dispose();
-        }
-        catch
-        {
-            // 忽略
-        }
-        finally
-        {
-            currentSpeech = null;
-        }
+        currentSpeech.Cancel();
+        currentSpeech.Dispose();
+        currentSpeech = null;
     }
 }

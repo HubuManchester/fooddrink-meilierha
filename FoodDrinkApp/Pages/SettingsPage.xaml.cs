@@ -1,13 +1,21 @@
 ﻿using FoodDrinkApp.Services;
+using Microsoft.Maui.Storage;
 
 namespace FoodDrinkApp.Pages;
 
 public partial class SettingsPage : ContentPage
 {
+    private const string ThemeKey = "app_theme";
+
     public SettingsPage()
     {
         InitializeComponent();
-        ThemePicker.SelectedIndex = 0;
+
+        // 从 Preferences 读取保存的主题
+        var savedTheme = Preferences.Get(ThemeKey, 0);
+        ThemePicker.SelectedIndex = savedTheme;
+
+        // 从 AccessibilityService 读取大字体设置
         LargeTextSwitch.IsToggled = AccessibilityService.LargeTextEnabled;
     }
 
@@ -21,15 +29,24 @@ public partial class SettingsPage : ContentPage
 
     private void OnThemeChanged(object sender, EventArgs e)
     {
-        Application.Current!.UserAppTheme = ThemePicker.SelectedIndex switch
+        var themeIndex = ThemePicker.SelectedIndex;
+        ApplyTheme(themeIndex);
+
+        // 保存主题设置到 Preferences
+        Preferences.Set(ThemeKey, themeIndex);
+
+        StatusLabel.Text = $"Theme changed to {ThemePicker.SelectedItem}";
+        SemanticScreenReader.Announce(StatusLabel.Text);
+    }
+
+    private void ApplyTheme(int themeIndex)
+    {
+        Application.Current!.UserAppTheme = themeIndex switch
         {
             1 => AppTheme.Light,
             2 => AppTheme.Dark,
             _ => AppTheme.Unspecified
         };
-
-        StatusLabel.Text = $"Theme changed to {ThemePicker.SelectedItem}";
-        SemanticScreenReader.Announce(StatusLabel.Text);
     }
 
     private void OnLargeTextToggled(object sender, ToggledEventArgs e)

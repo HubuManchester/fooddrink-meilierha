@@ -1,13 +1,32 @@
 ﻿using System.Runtime.CompilerServices;
+using Microsoft.Maui.Storage;
 
 namespace FoodDrinkApp.Services;
 
 public static class AccessibilityService
 {
     private const double LargeTextScale = 1.22;
+    private const string LargeTextKey = "large_text_enabled";
     private static readonly ConditionalWeakTable<BindableObject, FontSizeStore> OriginalFontSizes = new();
 
-    public static bool LargeTextEnabled { get; set; }
+    private static bool _largeTextEnabled;
+
+    public static bool LargeTextEnabled
+    {
+        get => _largeTextEnabled;
+        set
+        {
+            _largeTextEnabled = value;
+            // 保存到 Preferences
+            Preferences.Set(LargeTextKey, value);
+        }
+    }
+
+    static AccessibilityService()
+    {
+        // 从 Preferences 读取保存的大字体设置
+        _largeTextEnabled = Preferences.Get(LargeTextKey, false);
+    }
 
     public static void ApplyFontScale(Element root)
     {

@@ -3,16 +3,56 @@
   "WorkspaceRootPath": "C:\\250\\FoodDrinkApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|c:\\250\\fooddrinkapp\\pages\\fooddetailpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|solutionrelative:pages\\fooddetailpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|c:\\250\\fooddrinkapp\\pages\\editfoodpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|solutionrelative:pages\\editfoodpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|c:\\250\\fooddrinkapp\\pages\\addfoodpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|solutionrelative:pages\\addfoodpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|c:\\250\\fooddrinkapp\\pages\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|solutionrelative:pages\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|c:\\250\\fooddrinkapp\\viewmodels\\foodsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|solutionrelative:viewmodels\\foodsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|c:\\250\\fooddrinkapp\\services\\foodservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|solutionrelative:services\\foodservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|c:\\250\\fooddrinkapp\\models\\fooditem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|solutionrelative:models\\fooditem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|c:\\250\\fooddrinkapp\\pages\\editfoodpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|solutionrelative:pages\\editfoodpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|c:\\250\\fooddrinkapp\\services\\speechservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|solutionrelative:services\\speechservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|c:\\250\\fooddrinkapp\\pages\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|solutionrelative:pages\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|c:\\250\\fooddrinkapp\\pages\\fooddetailpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|solutionrelative:pages\\fooddetailpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|c:\\250\\fooddrinkapp\\pages\\fooddetailpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|solutionrelative:pages\\fooddetailpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|c:\\250\\fooddrinkapp\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|c:\\250\\fooddrinkapp\\services\\accessibilityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|solutionrelative:services\\accessibilityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|c:\\250\\fooddrinkapp\\pages\\settingspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|solutionrelative:pages\\settingspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|c:\\250\\fooddrinkapp\\platforms\\android\\androidmanifest.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
@@ -23,28 +63,8 @@
       "RelativeMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|solutionrelative:platforms\\android\\androidmanifest.xml||{6B79B2C4-8503-4A04-8248-ADCEF2B49CB1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|c:\\250\\fooddrinkapp\\pages\\fooddetailpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|solutionrelative:pages\\fooddetailpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|c:\\250\\fooddrinkapp\\pages\\editfoodpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|solutionrelative:pages\\editfoodpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|c:\\250\\fooddrinkapp\\viewmodels\\foodsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|solutionrelative:viewmodels\\foodsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|c:\\250\\fooddrinkapp\\services\\foodtransferservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|solutionrelative:services\\foodtransferservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|c:\\250\\fooddrinkapp\\pages\\editfoodpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|solutionrelative:pages\\editfoodpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|c:\\250\\fooddrinkapp\\pages\\addfoodpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|solutionrelative:pages\\addfoodpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|c:\\250\\fooddrinkapp\\pages\\addfoodpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -67,14 +87,6 @@
       "RelativeMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|solutionrelative:appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|c:\\250\\fooddrinkapp\\services\\foodservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|solutionrelative:services\\foodservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|c:\\250\\fooddrinkapp\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|c:\\250\\fooddrinkapp\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
@@ -89,18 +101,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|c:\\250\\fooddrinkapp\\pages\\settingspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|solutionrelative:pages\\settingspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|c:\\250\\fooddrinkapp\\models\\fooditem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|solutionrelative:models\\fooditem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|c:\\250\\fooddrinkapp\\pages\\settingspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|solutionrelative:pages\\settingspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|c:\\250\\fooddrinkapp\\services\\accessibilityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|solutionrelative:services\\accessibilityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{58A5DC93-3C03-471C-9616-B18D9744824C}|FoodDrinkApp.csproj|c:\\250\\fooddrinkapp\\platforms\\android\\mainapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -126,127 +126,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SpeechService.cs",
-              "DocumentMoniker": "C:\\250\\FoodDrinkApp\\Services\\SpeechService.cs",
-              "RelativeDocumentMoniker": "Services\\SpeechService.cs",
-              "ToolTip": "C:\\250\\FoodDrinkApp\\Services\\SpeechService.cs",
-              "RelativeToolTip": "Services\\SpeechService.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwC8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-01T09:39:13.671Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AndroidManifest.xml",
-              "DocumentMoniker": "C:\\250\\FoodDrinkApp\\Platforms\\Android\\AndroidManifest.xml",
-              "RelativeDocumentMoniker": "Platforms\\Android\\AndroidManifest.xml",
-              "ToolTip": "C:\\250\\FoodDrinkApp\\Platforms\\Android\\AndroidManifest.xml",
-              "RelativeToolTip": "Platforms\\Android\\AndroidManifest.xml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2026-06-01T09:18:23.213Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "EditFoodPage.xaml.cs",
-              "DocumentMoniker": "C:\\250\\FoodDrinkApp\\Pages\\EditFoodPage.xaml.cs",
-              "RelativeDocumentMoniker": "Pages\\EditFoodPage.xaml.cs",
-              "ToolTip": "C:\\250\\FoodDrinkApp\\Pages\\EditFoodPage.xaml.cs",
-              "RelativeToolTip": "Pages\\EditFoodPage.xaml.cs",
-              "ViewState": "AgIAAGkAAAAAAAAAAAAmwHUAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-01T07:12:48.892Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FoodDetailPage.xaml.cs",
-              "DocumentMoniker": "C:\\250\\FoodDrinkApp\\Pages\\FoodDetailPage.xaml.cs",
-              "RelativeDocumentMoniker": "Pages\\FoodDetailPage.xaml.cs",
-              "ToolTip": "C:\\250\\FoodDrinkApp\\Pages\\FoodDetailPage.xaml.cs",
-              "RelativeToolTip": "Pages\\FoodDetailPage.xaml.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAADwv1cAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-30T17:24:50.462Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainPage.xaml.cs",
-              "DocumentMoniker": "C:\\250\\FoodDrinkApp\\Pages\\MainPage.xaml.cs",
-              "RelativeDocumentMoniker": "Pages\\MainPage.xaml.cs",
-              "ToolTip": "C:\\250\\FoodDrinkApp\\Pages\\MainPage.xaml.cs",
-              "RelativeToolTip": "Pages\\MainPage.xaml.cs",
-              "ViewState": "AgIAAGkAAAAAAAAAAAAjwJoAAABPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-30T17:24:25.774Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "FoodsViewModel.cs",
-              "DocumentMoniker": "C:\\250\\FoodDrinkApp\\ViewModels\\FoodsViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\FoodsViewModel.cs",
-              "ToolTip": "C:\\250\\FoodDrinkApp\\ViewModels\\FoodsViewModel.cs",
-              "RelativeToolTip": "ViewModels\\FoodsViewModel.cs",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAmwHAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-30T17:23:25.663Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AndroidManifest.xml",
-              "DocumentMoniker": "C:\\250\\FoodDrinkApp\\Platforms\\Android\\AndroidManifest.xml",
-              "RelativeDocumentMoniker": "Platforms\\Android\\AndroidManifest.xml",
-              "ToolTip": "C:\\250\\FoodDrinkApp\\Platforms\\Android\\AndroidManifest.xml",
-              "RelativeToolTip": "Platforms\\Android\\AndroidManifest.xml",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAqwBYAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2026-05-31T12:40:50.964Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FoodDetailPage.xaml",
-              "DocumentMoniker": "C:\\250\\FoodDrinkApp\\Pages\\FoodDetailPage.xaml",
-              "RelativeDocumentMoniker": "Pages\\FoodDetailPage.xaml",
-              "ToolTip": "C:\\250\\FoodDrinkApp\\Pages\\FoodDetailPage.xaml",
-              "RelativeToolTip": "Pages\\FoodDetailPage.xaml",
-              "ViewState": "AgIAADwAAAAAAAAAAAAmwFQAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-05-30T17:11:24.112Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "FoodTransferService.cs",
-              "DocumentMoniker": "C:\\250\\FoodDrinkApp\\Services\\FoodTransferService.cs",
-              "RelativeDocumentMoniker": "Services\\FoodTransferService.cs",
-              "ToolTip": "C:\\250\\FoodDrinkApp\\Services\\FoodTransferService.cs",
-              "RelativeToolTip": "Services\\FoodTransferService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-01T08:50:01.809Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
               "Title": "EditFoodPage.xaml",
               "DocumentMoniker": "C:\\250\\FoodDrinkApp\\Pages\\EditFoodPage.xaml",
               "RelativeDocumentMoniker": "Pages\\EditFoodPage.xaml",
@@ -259,7 +143,189 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EditFoodPage.xaml.cs",
+              "DocumentMoniker": "C:\\250\\FoodDrinkApp\\Pages\\EditFoodPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\EditFoodPage.xaml.cs",
+              "ToolTip": "C:\\250\\FoodDrinkApp\\Pages\\EditFoodPage.xaml.cs",
+              "RelativeToolTip": "Pages\\EditFoodPage.xaml.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAIwHgAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-01T07:12:48.892Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FoodsViewModel.cs",
+              "DocumentMoniker": "C:\\250\\FoodDrinkApp\\ViewModels\\FoodsViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\FoodsViewModel.cs",
+              "ToolTip": "C:\\250\\FoodDrinkApp\\ViewModels\\FoodsViewModel.cs",
+              "RelativeToolTip": "ViewModels\\FoodsViewModel.cs",
+              "ViewState": "AgIAAIcAAAAAAAAAAAAUwI8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T17:23:25.663Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FoodItem.cs",
+              "DocumentMoniker": "C:\\250\\FoodDrinkApp\\Models\\FoodItem.cs",
+              "RelativeDocumentMoniker": "Models\\FoodItem.cs",
+              "ToolTip": "C:\\250\\FoodDrinkApp\\Models\\FoodItem.cs",
+              "RelativeToolTip": "Models\\FoodItem.cs",
+              "ViewState": "AgIAAJcAAAAAAAAAAAAuwKsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T16:55:57.104Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SpeechService.cs",
+              "DocumentMoniker": "C:\\250\\FoodDrinkApp\\Services\\SpeechService.cs",
+              "RelativeDocumentMoniker": "Services\\SpeechService.cs",
+              "ToolTip": "C:\\250\\FoodDrinkApp\\Services\\SpeechService.cs",
+              "RelativeToolTip": "Services\\SpeechService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-01T09:39:13.671Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AddFoodPage.xaml.cs",
+              "DocumentMoniker": "C:\\250\\FoodDrinkApp\\Pages\\AddFoodPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\AddFoodPage.xaml.cs",
+              "ToolTip": "C:\\250\\FoodDrinkApp\\Pages\\AddFoodPage.xaml.cs",
+              "RelativeToolTip": "Pages\\AddFoodPage.xaml.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAIwIAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T17:26:28.753Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FoodService.cs",
+              "DocumentMoniker": "C:\\250\\FoodDrinkApp\\Services\\FoodService.cs",
+              "RelativeDocumentMoniker": "Services\\FoodService.cs",
+              "ToolTip": "C:\\250\\FoodDrinkApp\\Services\\FoodService.cs",
+              "RelativeToolTip": "Services\\FoodService.cs",
+              "ViewState": "AgIAAMgAAAAAAAAAAAAIwNEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T16:59:23.621Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "C:\\250\\FoodDrinkApp\\Pages\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\MainPage.xaml.cs",
+              "ToolTip": "C:\\250\\FoodDrinkApp\\Pages\\MainPage.xaml.cs",
+              "RelativeToolTip": "Pages\\MainPage.xaml.cs",
+              "ViewState": "AgIAAMcAAAAAAAAAAAAIwOAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T17:24:25.774Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "FoodDetailPage.xaml.cs",
+              "DocumentMoniker": "C:\\250\\FoodDrinkApp\\Pages\\FoodDetailPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\FoodDetailPage.xaml.cs",
+              "ToolTip": "C:\\250\\FoodDrinkApp\\Pages\\FoodDetailPage.xaml.cs",
+              "RelativeToolTip": "Pages\\FoodDetailPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T17:24:50.462Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FoodDetailPage.xaml",
+              "DocumentMoniker": "C:\\250\\FoodDrinkApp\\Pages\\FoodDetailPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\FoodDetailPage.xaml",
+              "ToolTip": "C:\\250\\FoodDrinkApp\\Pages\\FoodDetailPage.xaml",
+              "RelativeToolTip": "Pages\\FoodDetailPage.xaml",
+              "ViewState": "AgIAADwAAAAAAAAAAAAmwFQAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-30T17:11:24.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\250\\FoodDrinkApp\\App.xaml.cs",
+              "RelativeDocumentMoniker": "App.xaml.cs",
+              "ToolTip": "C:\\250\\FoodDrinkApp\\App.xaml.cs",
+              "RelativeToolTip": "App.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-01T01:49:24.319Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 12,
+              "Title": "SettingsPage.xaml.cs",
+              "DocumentMoniker": "C:\\250\\FoodDrinkApp\\Pages\\SettingsPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\SettingsPage.xaml.cs",
+              "ToolTip": "C:\\250\\FoodDrinkApp\\Pages\\SettingsPage.xaml.cs",
+              "RelativeToolTip": "Pages\\SettingsPage.xaml.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAIwE4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-31T12:39:00.787Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AccessibilityService.cs",
+              "DocumentMoniker": "C:\\250\\FoodDrinkApp\\Services\\AccessibilityService.cs",
+              "RelativeDocumentMoniker": "Services\\AccessibilityService.cs",
+              "ToolTip": "C:\\250\\FoodDrinkApp\\Services\\AccessibilityService.cs",
+              "RelativeToolTip": "Services\\AccessibilityService.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAzwFkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-31T12:45:42.286Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AndroidManifest.xml",
+              "DocumentMoniker": "C:\\250\\FoodDrinkApp\\Platforms\\Android\\AndroidManifest.xml",
+              "RelativeDocumentMoniker": "Platforms\\Android\\AndroidManifest.xml",
+              "ToolTip": "C:\\250\\FoodDrinkApp\\Platforms\\Android\\AndroidManifest.xml",
+              "RelativeToolTip": "Platforms\\Android\\AndroidManifest.xml",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAqwBYAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2026-05-31T12:40:50.964Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AndroidManifest.xml",
+              "DocumentMoniker": "C:\\250\\FoodDrinkApp\\Platforms\\Android\\AndroidManifest.xml",
+              "RelativeDocumentMoniker": "Platforms\\Android\\AndroidManifest.xml",
+              "ToolTip": "C:\\250\\FoodDrinkApp\\Platforms\\Android\\AndroidManifest.xml",
+              "RelativeToolTip": "Platforms\\Android\\AndroidManifest.xml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2026-06-01T09:18:23.213Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "FoodTransferService.cs",
+              "DocumentMoniker": "C:\\250\\FoodDrinkApp\\Services\\FoodTransferService.cs",
+              "RelativeDocumentMoniker": "Services\\FoodTransferService.cs",
+              "ToolTip": "C:\\250\\FoodDrinkApp\\Services\\FoodTransferService.cs",
+              "RelativeToolTip": "Services\\FoodTransferService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-01T08:50:01.809Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "MainPage.xaml",
               "DocumentMoniker": "C:\\250\\FoodDrinkApp\\Pages\\MainPage.xaml",
               "RelativeDocumentMoniker": "Pages\\MainPage.xaml",
@@ -267,25 +333,11 @@
               "RelativeToolTip": "Pages\\MainPage.xaml",
               "ViewState": "AgIAAKAAAAAAAAAAAAAIwKYAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-05-30T17:10:38.444Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-30T17:10:38.444Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AddFoodPage.xaml.cs",
-              "DocumentMoniker": "C:\\250\\FoodDrinkApp\\Pages\\AddFoodPage.xaml.cs",
-              "RelativeDocumentMoniker": "Pages\\AddFoodPage.xaml.cs",
-              "ToolTip": "C:\\250\\FoodDrinkApp\\Pages\\AddFoodPage.xaml.cs",
-              "RelativeToolTip": "Pages\\AddFoodPage.xaml.cs",
-              "ViewState": "AgIAAGEAAAAAAAAAAADwv3kAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-30T17:26:28.753Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "AddFoodPage.xaml",
               "DocumentMoniker": "C:\\250\\FoodDrinkApp\\Pages\\AddFoodPage.xaml",
               "RelativeDocumentMoniker": "Pages\\AddFoodPage.xaml",
@@ -298,7 +350,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 18,
               "Title": "MauiProgram.cs",
               "DocumentMoniker": "C:\\250\\FoodDrinkApp\\MauiProgram.cs",
               "RelativeDocumentMoniker": "MauiProgram.cs",
@@ -306,12 +358,11 @@
               "RelativeToolTip": "MauiProgram.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAIwCkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-30T17:26:53.563Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-30T17:26:53.563Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 19,
               "Title": "AppShell.xaml.cs",
               "DocumentMoniker": "C:\\250\\FoodDrinkApp\\AppShell.xaml.cs",
               "RelativeDocumentMoniker": "AppShell.xaml.cs",
@@ -323,7 +374,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 20,
               "Title": "AppShell.xaml",
               "DocumentMoniker": "C:\\250\\FoodDrinkApp\\AppShell.xaml",
               "RelativeDocumentMoniker": "AppShell.xaml",
@@ -335,31 +386,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "FoodService.cs",
-              "DocumentMoniker": "C:\\250\\FoodDrinkApp\\Services\\FoodService.cs",
-              "RelativeDocumentMoniker": "Services\\FoodService.cs",
-              "ToolTip": "C:\\250\\FoodDrinkApp\\Services\\FoodService.cs",
-              "RelativeToolTip": "Services\\FoodService.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAUwFMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-30T16:59:23.621Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "C:\\250\\FoodDrinkApp\\App.xaml.cs",
-              "RelativeDocumentMoniker": "App.xaml.cs",
-              "ToolTip": "C:\\250\\FoodDrinkApp\\App.xaml.cs",
-              "RelativeToolTip": "App.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-01T01:49:24.319Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 21,
               "Title": "App.xaml",
               "DocumentMoniker": "C:\\250\\FoodDrinkApp\\App.xaml",
               "RelativeDocumentMoniker": "App.xaml",
@@ -371,7 +398,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 22,
               "Title": "SplashPage.xaml.cs",
               "DocumentMoniker": "C:\\250\\FoodDrinkApp\\Pages\\SplashPage.xaml.cs",
               "RelativeDocumentMoniker": "Pages\\SplashPage.xaml.cs",
@@ -383,7 +410,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 23,
               "Title": "SplashPage.xaml",
               "DocumentMoniker": "C:\\250\\FoodDrinkApp\\Pages\\SplashPage.xaml",
               "RelativeDocumentMoniker": "Pages\\SplashPage.xaml",
@@ -391,11 +418,12 @@
               "RelativeToolTip": "Pages\\SplashPage.xaml",
               "ViewState": "AgIAAA8AAAAAAAAAAAAgwCgAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-06-01T01:50:48.865Z"
+              "WhenOpened": "2026-06-01T01:50:48.865Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 24,
               "Title": "SettingsPage.xaml",
               "DocumentMoniker": "C:\\250\\FoodDrinkApp\\Pages\\SettingsPage.xaml",
               "RelativeDocumentMoniker": "Pages\\SettingsPage.xaml",
@@ -403,43 +431,8 @@
               "RelativeToolTip": "Pages\\SettingsPage.xaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAE4AAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-05-31T12:38:35.26Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "FoodItem.cs",
-              "DocumentMoniker": "C:\\250\\FoodDrinkApp\\Models\\FoodItem.cs",
-              "RelativeDocumentMoniker": "Models\\FoodItem.cs",
-              "ToolTip": "C:\\250\\FoodDrinkApp\\Models\\FoodItem.cs",
-              "RelativeToolTip": "Models\\FoodItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-30T16:55:57.104Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "SettingsPage.xaml.cs",
-              "DocumentMoniker": "C:\\250\\FoodDrinkApp\\Pages\\SettingsPage.xaml.cs",
-              "RelativeDocumentMoniker": "Pages\\SettingsPage.xaml.cs",
-              "ToolTip": "C:\\250\\FoodDrinkApp\\Pages\\SettingsPage.xaml.cs",
-              "RelativeToolTip": "Pages\\SettingsPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T12:39:00.787Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "AccessibilityService.cs",
-              "DocumentMoniker": "C:\\250\\FoodDrinkApp\\Services\\AccessibilityService.cs",
-              "RelativeDocumentMoniker": "Services\\AccessibilityService.cs",
-              "ToolTip": "C:\\250\\FoodDrinkApp\\Services\\AccessibilityService.cs",
-              "RelativeToolTip": "Services\\AccessibilityService.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAAEYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T12:45:42.286Z"
+              "WhenOpened": "2026-05-31T12:38:35.26Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
